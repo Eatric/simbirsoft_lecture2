@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+using SimbirSoft.API.WebApp.Common.Swagger;
+
 namespace SimbirSoft.API.WebApp.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
+	[ApiExplorerSettings(GroupName = SwaggerGroups.Cinema)]
 	public class WeatherForecastController : ControllerBase
 	{
 		private static readonly string[] Summaries = new[]
