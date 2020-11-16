@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+using SimbirSoft.API.WebApp.Common.Swagger;
+
 namespace SimbirSoft.API.WebApp
 {
 	public class Startup
@@ -27,6 +29,7 @@ namespace SimbirSoft.API.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.ConfigureSwagger();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +50,10 @@ namespace SimbirSoft.API.WebApp
 			{
 				endpoints.MapControllers();
 			});
+
+			app.UseCors();
+			app.UseOpenApi();
+			app.UseSwaggerUi3();
 		}
 	}
 }
