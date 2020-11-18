@@ -4,7 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using SimbirSoft.API.Services.Bootstrap;
 using SimbirSoft.API.WebApp.Common.Swagger;
+
+using System.Reflection;
+using AutoMapper;
+using SimbirSoft.API.Models.Domain;
 
 namespace SimbirSoft.API.WebApp
 {
@@ -21,6 +26,8 @@ namespace SimbirSoft.API.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.ConfigureServices();
+			services.AddAutoMapper(typeof(Cinema).GetTypeInfo().Assembly);
 			services.ConfigureSwagger();
 		}
 
