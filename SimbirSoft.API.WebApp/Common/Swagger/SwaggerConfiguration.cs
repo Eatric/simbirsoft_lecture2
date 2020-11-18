@@ -18,6 +18,7 @@ namespace SimbirSoft.API.WebApp.Common.Swagger
                 c.Title = "Simbirsoft WebApp";
                 c.DocumentName = SwaggerGroups.Cinema;
                 c.ApiGroupNames = new[] { SwaggerGroups.Cinema };
+                c.GenerateXmlObjects = true;
             });
         }
     }
