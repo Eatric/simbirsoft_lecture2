@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimbirSoft.API.WebApp</name>
+    </assembly>
+    <members>
+        <member name="T:SimbirSoft.API.WebApp.Common.Swagger.SwaggerConfiguration">
+            <summary>
+            Расширения для конфигурации Swagger.
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.WebApp.Common.Swagger.SwaggerConfiguration.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Настройка документов Swagger.
+            </summary>
+            <param name="services">Коллекция сервисов для DI.</param>
+        </member>
+        <member name="T:SimbirSoft.API.WebApp.Common.Swagger.SwaggerGroups">
+            <summary>
+            Константы для указания частей API в Swagger.
+            </summary>
+        </member>
+        <member name="F:SimbirSoft.API.WebApp.Common.Swagger.SwaggerGroups.Cinema">
+            <summary>
+            Константа для swagger-документа "Кино".
+            </summary>
+        </member>
+        <member name="T:SimbirSoft.API.WebApp.Controllers.CinemaController">
+            <summary>
+            Контроллер для работы с кинотеатрами
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.WebApp.Controllers.CinemaController.Get">
+            <summary>
+            Получение списка кинотеатров
+            </summary>
+            <returns>Коллекция сущностей <see cref="T:SimbirSoft.API.Models.DTO.CinemaDTO"/></returns>
+        </member>
+    </members>
+</doc>

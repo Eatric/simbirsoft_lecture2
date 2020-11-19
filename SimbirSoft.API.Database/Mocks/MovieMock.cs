@@ -6,8 +6,15 @@ using System.Text;
 
 namespace SimbirSoft.API.Database.Mocks
 {
+	/// <summary>
+	/// Mock для работы с данными <see cref="Movie"/>
+	/// </summary>
 	public static class MovieMock
 	{
+		/// <summary>
+		/// Метод для генерации объектов <see cref="Movie"/>
+		/// </summary>
+		/// <returns>Коллекция сущностей <see cref="Movie"/></returns>
 		public static IEnumerable<Movie> GetMovies()
 		{
 			var random = new Random();

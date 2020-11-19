@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimbirSoft.API.Database</name>
+    </assembly>
+    <members>
+        <member name="T:SimbirSoft.API.Database.Mocks.CinemaMock">
+            <summary>
+            Mock для работы с <see cref="T:SimbirSoft.API.Models.Domain.Cinema"/>
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.Database.Mocks.CinemaMock.GetCinemas">
+            <summary>
+            Генерация случайных экземпляров объектов <see cref="T:SimbirSoft.API.Models.Domain.Cinema"/>
+            </summary>
+            <returns>Коллекция сущностей <see cref="T:SimbirSoft.API.Models.Domain.Cinema"/></returns>
+        </member>
+        <member name="T:SimbirSoft.API.Database.Mocks.MovieMock">
+            <summary>
+            Mock для работы с данными <see cref="T:SimbirSoft.API.Models.Domain.Movie"/>
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.Database.Mocks.MovieMock.GetMovies">
+            <summary>
+            Метод для генерации объектов <see cref="T:SimbirSoft.API.Models.Domain.Movie"/>
+            </summary>
+            <returns>Коллекция сущностей <see cref="T:SimbirSoft.API.Models.Domain.Movie"/></returns>
+        </member>
+    </members>
+</doc>

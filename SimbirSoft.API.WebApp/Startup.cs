@@ -10,6 +10,7 @@ using SimbirSoft.API.WebApp.Common.Swagger;
 using System.Reflection;
 using AutoMapper;
 using SimbirSoft.API.Models.Domain;
+using Microsoft.Extensions.Logging;
 
 namespace SimbirSoft.API.WebApp
 {
@@ -32,7 +33,7 @@ namespace SimbirSoft.API.WebApp
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
 		{
 			if (env.IsDevelopment())
 			{
@@ -53,6 +54,8 @@ namespace SimbirSoft.API.WebApp
 			app.UseCors();
 			app.UseOpenApi();
 			app.UseSwaggerUi3();
+
+			logger.LogInformation("End configure");
 		}
 	}
 }
