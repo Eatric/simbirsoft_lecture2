@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimbirSoft.API.Services</name>
+    </assembly>
+    <members>
+        <member name="T:SimbirSoft.API.Services.Bootstrap.ServicesConfiguration">
+            <summary>
+            Методы для конфигурации сервисов
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.Services.Bootstrap.ServicesConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурация сервисов
+            </summary>
+            <param name="services">Сервисы из Startup</param>
+        </member>
+        <member name="T:SimbirSoft.API.Services.Entities.CinemaService">
+            <summary>
+            Сервис для работы с данными кинотеатров
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.Services.Entities.CinemaService.GetCinemas">
+            <inheritdoc cref="T:SimbirSoft.API.Services.Interfaces.ICinemaService"/>
+        </member>
+        <member name="T:SimbirSoft.API.Services.Interfaces.ICinemaService">
+            <summary>
+            Интерфейс сервиса для работы с кинотеатрами.
+            </summary>
+        </member>
+        <member name="M:SimbirSoft.API.Services.Interfaces.ICinemaService.GetCinemas">
+            <summary>
+            Метод для получения списка кинотеатров
+            </summary>
+            <returns>Список кинотеатров</returns>
+        </member>
+    </members>
+</doc>

@@ -12,6 +12,9 @@ using System.Text;
 
 namespace SimbirSoft.API.Services.Entities
 {
+	/// <summary>
+	/// Сервис для работы с данными кинотеатров
+	/// </summary>
 	public class CinemaService : ICinemaService
 	{
 		private readonly IMapper _mapper;
@@ -23,7 +26,8 @@ namespace SimbirSoft.API.Services.Entities
 			_cinemas = CinemaMock.GetCinemas().ToList();
 		}
 
-		public IEnumerable<CinemaDTO> GetCinemas()
+		/// <inheritdoc cref="ICinemaService"/>
+		public IEnumerable<CinemaDTO> GetCinemas()	
 		{
 			var response = _mapper.Map<IEnumerable<CinemaDTO>>(_cinemas);
 

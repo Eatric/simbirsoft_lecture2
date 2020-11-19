@@ -12,6 +12,9 @@ using SimbirSoft.API.WebApp.Common.Swagger;
 
 namespace SimbirSoft.API.WebApp.Controllers
 {
+	/// <summary>
+	/// Контроллер для работы с кинотеатрами
+	/// </summary>
 	[ApiController]
 	[Route("[controller]")]
 	[ApiExplorerSettings(GroupName = SwaggerGroups.Cinema)]
@@ -26,10 +29,15 @@ namespace SimbirSoft.API.WebApp.Controllers
 			_cinemaService = cinemaService;
 		}
 
+		/// <summary>
+		/// Получение списка кинотеатров
+		/// </summary>
+		/// <returns>Коллекция сущностей <see cref="CinemaDTO"/></returns>
 		[HttpGet]
 		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<CinemaDTO>))]
 		public IActionResult Get()
 		{
+			_logger.LogInformation("GET /cinema request accepted");
 			var response = _cinemaService.GetCinemas();
 
 			return Ok(response);

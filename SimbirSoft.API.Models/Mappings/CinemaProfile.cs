@@ -5,6 +5,9 @@ using SimbirSoft.API.Models.DTO;
 
 namespace SimbirSoft.API.Models.Mappings
 {
+	/// <summary>
+	/// Mapping для <see cref="Cinema"/>
+	/// </summary>
 	public class CinemaProfile : Profile
 	{
 		public CinemaProfile()

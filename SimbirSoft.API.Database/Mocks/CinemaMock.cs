@@ -7,12 +7,19 @@ using System.Text;
 
 namespace SimbirSoft.API.Database.Mocks
 {
+	/// <summary>
+	/// Mock для работы с <see cref="Cinema"/>
+	/// </summary>
 	public static class CinemaMock
 	{
+		/// <summary>
+		/// Генерация случайных экземпляров объектов <see cref="Cinema"/>
+		/// </summary>
+		/// <returns>Коллекция сущностей <see cref="Cinema"/></returns>
 		public static IEnumerable<Cinema> GetCinemas()
 		{
 			var random = new Random();
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < 2; i++)
 			{
 				yield return new Cinema()
 				{
