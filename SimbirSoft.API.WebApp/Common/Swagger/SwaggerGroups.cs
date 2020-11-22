@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 namespace SimbirSoft.API.WebApp.Common.Swagger
 {
     /// <summary>
-    /// Константы для указания частей API в Swagger.
+    /// Константы для указания частей API в Swagger
     /// </summary>
     public sealed class SwaggerGroups
     {
         /// <summary>
-        /// Константа для swagger-документа "Кино".
+        /// Константа для swagger-документа "Кино"
         /// </summary>
         public const string Cinema = nameof(Cinema);
     }
