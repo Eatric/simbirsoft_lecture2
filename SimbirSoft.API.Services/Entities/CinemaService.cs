@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-
 using SimbirSoft.API.Database.Mocks;
 using SimbirSoft.API.Models.Domain;
 using SimbirSoft.API.Models.DTO;
 using SimbirSoft.API.Services.Interfaces;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +18,10 @@ namespace SimbirSoft.API.Services.Entities
 		private readonly IMapper _mapper;
 		private List<Cinema> _cinemas;
 
+		/// <summary>
+		/// Инициализация сервиса <see cref="CinemaService"/>
+		/// </summary>
+		/// <param name="mapper">Сервис для привидения DomainModels к DTO</param>
 		public CinemaService(IMapper mapper)
 		{
 			_mapper = mapper;

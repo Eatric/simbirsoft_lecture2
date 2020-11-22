@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using SimbirSoft.API.Models.DTO;
 using SimbirSoft.API.Services.Interfaces;
 using SimbirSoft.API.WebApp.Common.Swagger;
@@ -23,6 +21,11 @@ namespace SimbirSoft.API.WebApp.Controllers
 		private readonly ILogger<CinemaController> _logger;
 		private readonly ICinemaService _cinemaService;
 
+		/// <summary>
+		/// Инициализация контроллера для работы с данными кинотеатров
+		/// </summary>
+		/// <param name="cinemaService">Сервис для работы с кинотеатрами</param>
+		/// <param name="logger">Сервис для логирования</param>
 		public CinemaController(ICinemaService cinemaService, ILogger<CinemaController> logger)
 		{
 			_logger = logger;

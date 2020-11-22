@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-
 using SimbirSoft.API.Services.Entities;
 using SimbirSoft.API.Services.Interfaces;
-
 using System;
 using System.Collections.Generic;
 using System.Text;

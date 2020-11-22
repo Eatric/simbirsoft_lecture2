@@ -3,14 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.Extensions.Logging;
 using SimbirSoft.API.Services.Bootstrap;
 using SimbirSoft.API.WebApp.Common.Swagger;
-
+using SimbirSoft.API.Models.Domain;
 using System.Reflection;
 using AutoMapper;
-using SimbirSoft.API.Models.Domain;
-using Microsoft.Extensions.Logging;
 
 namespace SimbirSoft.API.WebApp
 {

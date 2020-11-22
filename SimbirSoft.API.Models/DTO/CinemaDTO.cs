@@ -1,5 +1,4 @@
 ﻿using SimbirSoft.API.Models.Domain;
-
 using System.ComponentModel.DataAnnotations;
 
 namespace SimbirSoft.API.Models.DTO
