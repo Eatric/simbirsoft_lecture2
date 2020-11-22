@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimbirSoft.API.Models</name>
+    </assembly>
+    <members>
+        <member name="T:SimbirSoft.API.Models.Domain.Cinema">
+            <summary>
+            Кинотеатр
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Cinema.Id">
+            <summary>
+            Идентификатор записи
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Cinema.Name">
+            <summary>
+            Название кинотеатра
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Cinema.Address">
+            <summary>
+            Адрес кинотеатра
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Cinema.NumberOfHalls">
+            <summary>
+            Количество кинозалов
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Cinema.Movies">
+            <summary>
+            Список фильмов к показу
+            </summary>
+        </member>
+        <member name="T:SimbirSoft.API.Models.Domain.Movie">
+            <summary>
+            Фильм
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Movie.Id">
+            <summary>
+            Идентификатор записи
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Movie.Name">
+            <summary>
+            Название фильма
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Movie.Description">
+            <summary>
+            Описание фильма
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Movie.Rating">
+            <summary>
+            Рейтинг фильма
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Movie.Cost">
+            <summary>
+            Стоимость билета
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.Domain.Movie.Date">
+            <summary>
+            Время показа
+            </summary>
+        </member>
+        <member name="T:SimbirSoft.API.Models.DTO.CinemaDTO">
+            <summary>
+            DTO для <see cref="T:SimbirSoft.API.Models.Domain.Cinema"/>
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.CinemaDTO.Name">
+            <summary>
+            Имя кинотеатра
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.CinemaDTO.Address">
+            <summary>
+            Адрес кинотеатра
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.CinemaDTO.NumberOfHalls">
+            <summary>
+            Количество кинозалов
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.CinemaDTO.Movies">
+            <summary>
+            Список фильмов для показа
+            </summary>
+        </member>
+        <member name="T:SimbirSoft.API.Models.DTO.MovieDTO">
+            <summary>
+            DTO для <see cref="T:SimbirSoft.API.Models.Domain.Movie"/>
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.MovieDTO.Name">
+            <summary>
+            Название фильма
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.MovieDTO.Description">
+            <summary>
+            Описание фильма
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.MovieDTO.Rating">
+            <summary>
+            Рейтинг фильма
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.MovieDTO.Cost">
+            <summary>
+            Стоимость билета на фильм
+            </summary>
+        </member>
+        <member name="P:SimbirSoft.API.Models.DTO.MovieDTO.Date">
+            <summary>
+            Время показа
+            </summary>
+        </member>
+        <member name="T:SimbirSoft.API.Models.Mappings.CinemaProfile">
+            <summary>
+            Mapping для <see cref="T:SimbirSoft.API.Models.Domain.Cinema"/>
+            </summary>
+        </member>
+        <member name="T:SimbirSoft.API.Models.Mappings.MovieProfile">
+            <summary>
+            Mapping для <see cref="T:SimbirSoft.API.Models.Domain.Movie"/>
+            </summary>
+        </member>
+    </members>
+</doc>
