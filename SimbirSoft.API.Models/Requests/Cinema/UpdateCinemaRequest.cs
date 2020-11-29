@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace SimbirSoft.API.Models.DTO
+namespace SimbirSoft.API.Models.Requests.Cinema
 {
 	/// <summary>
-	/// Базовый класс для DTO
+	/// Запрос на обновление информации о сущности кинотеатра
 	/// </summary>
-	public class BaseDto
+	public class UpdateCinemaRequest : CreateCinemaRequest
 	{
 		/// <summary>
 		/// Идентификатор записи

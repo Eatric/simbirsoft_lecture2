@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace SimbirSoft.API.Models.DTO
+namespace SimbirSoft.API.Models.Requests.Movie
 {
 	/// <summary>
-	/// Базовый класс для DTO
+	/// Запрос на обновление сущности
 	/// </summary>
-	public class BaseDto
+	public class UpdateMovieRequest : CreateMovieRequest
 	{
 		/// <summary>
 		/// Идентификатор записи
 		/// </summary>
+		[Required]
 		public long Id { get; set; }
 	}
 }
