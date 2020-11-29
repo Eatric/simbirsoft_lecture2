@@ -24,10 +24,5 @@
 		/// Количество кинозалов
 		/// </summary>
 		public byte NumberOfHalls { get; set; }
-
-		/// <summary>
-		/// Список фильмов к показу
-		/// </summary>
-		public Movie[] Movies { get; set; }
 	}
 }
