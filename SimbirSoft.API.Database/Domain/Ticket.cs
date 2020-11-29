@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace SimbirSoft.API.Models.Domain
+namespace SimbirSoft.API.Database.Domain
 {
 	/// <summary>
 	/// Билет в кино
@@ -12,21 +14,25 @@ namespace SimbirSoft.API.Models.Domain
 		/// <summary>
 		/// Идентификатор билета
 		/// </summary>
+		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public long Id { get; set; }
 
 		/// <summary>
-		/// Идентификатор расписания
+		/// Расписание
 		/// </summary>
-		public long ScheduleId { get; set; }
+		public Schedule Schedule { get; set; }
 
 		/// <summary>
 		/// Стоимость билета
 		/// </summary>
+		[Required]
 		public double Cost { get; set; }
 
 		/// <summary>
 		/// Номер места
 		/// </summary>
+		[Required]
 		public int SeatNumber { get; set; }
 	}
 }
