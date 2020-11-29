@@ -12,13 +12,15 @@ namespace SimbirSoft.API.Models.DTO
 		/// <summary>
 		/// Название фильма
 		/// </summary>
-		[Required, MaxLength(64)]
+		[Required]
+		[StringLength(50)]
 		public string Name { get; set; }
 
 		/// <summary>
 		/// Описание фильма
 		/// </summary>
-		[Required, MaxLength(1000)]
+		[Required]
+		[StringLength(500)]
 		public string Description { get; set; }
 
 		/// <summary>
@@ -26,17 +28,5 @@ namespace SimbirSoft.API.Models.DTO
 		/// </summary>
 		[Required]
 		public double Rating { get; set; }
-
-		/// <summary>
-		/// Стоимость билета на фильм
-		/// </summary>
-		[Required]
-		public double Cost { get; set; }
-
-		/// <summary>
-		/// Время показа
-		/// </summary>
-		[Required]
-		public DateTime Date { get; set; }
 	}
 }

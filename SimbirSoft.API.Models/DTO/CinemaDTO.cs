@@ -11,7 +11,7 @@ namespace SimbirSoft.API.Models.DTO
 		/// <summary>
 		/// Имя кинотеатра
 		/// </summary>
-		[Required, MaxLength(64)]
+		[Required, MaxLength(50)]
 		public string Name { get; set; }
 
 		/// <summary>
@@ -25,11 +25,5 @@ namespace SimbirSoft.API.Models.DTO
 		/// </summary>
 		[Required]
 		public byte NumberOfHalls { get; set; }
-
-		/// <summary>
-		/// Список фильмов для показа
-		/// </summary>
-		[Required]
-		public MovieDTO[] Movies { get; set; }
 	}
 }

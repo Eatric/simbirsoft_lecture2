@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SimbirSoft.API.Database.Mocks;
-using SimbirSoft.API.Models.Domain;
+using SimbirSoft.API.Database.Domain;
 using SimbirSoft.API.Models.DTO;
 using SimbirSoft.API.Services.Interfaces;
 using System;
