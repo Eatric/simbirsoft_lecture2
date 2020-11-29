@@ -13,4 +13,8 @@
     <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SimbirSoft.API.Database\SimbirSoft.API.Database.csproj" />
+  </ItemGroup>
+
 </Project>

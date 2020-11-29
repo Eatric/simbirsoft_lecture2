@@ -1,8 +1,7 @@
-﻿using SimbirSoft.API.Models.Domain;
+﻿using SimbirSoft.API.Database.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SimbirSoft.API.Database.Mocks
 {
@@ -25,8 +24,7 @@ namespace SimbirSoft.API.Database.Mocks
 					Id = random.Next(0, 1000),
 					Address = random.Next().GetHashCode().ToString(),
 					Name = random.Next().GetHashCode().ToString(),
-					NumberOfHalls = (byte)random.Next(0, 50),
-					Movies = MovieMock.GetMovies().ToArray()
+					NumberOfHalls = (byte)random.Next(0, 50)
 				};
 			}
 		}

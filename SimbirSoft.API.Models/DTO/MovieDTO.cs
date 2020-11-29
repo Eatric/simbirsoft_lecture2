@@ -1,10 +1,6 @@
-﻿using SimbirSoft.API.Models.Domain;
+﻿using SimbirSoft.API.Database.Domain;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimbirSoft.API.Models.DTO
 {
