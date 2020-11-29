@@ -1,21 +1,12 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SimbirSoft.API.Database.Domain
 {
 	/// <summary>
 	/// Фильм
 	/// </summary>
-	public class Movie
+	public class Movie : BaseEntity
 	{
-		/// <summary>
-		/// Идентификатор записи
-		/// </summary>
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public long Id { get; set; }
-
 		/// <summary>
 		/// Название фильма
 		/// </summary>

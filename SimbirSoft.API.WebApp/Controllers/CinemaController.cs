@@ -41,7 +41,7 @@ namespace SimbirSoft.API.WebApp.Controllers
 		public IActionResult Get()
 		{
 			_logger.LogInformation("GET /cinema request accepted");
-			var response = _cinemaService.GetCinemas();
+			var response = _cinemaService.GetAsync();
 
 			return Ok(response);
 		}

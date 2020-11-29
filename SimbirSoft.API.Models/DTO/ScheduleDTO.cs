@@ -7,7 +7,7 @@ namespace SimbirSoft.API.Models.DTO
 	/// <summary>
 	/// DTO для <see cref="Schedule"/>
 	/// </summary>
-	public class ScheduleDTO
+	public class ScheduleDTO : BaseDto
 	{
 		/// <summary>
 		/// Кинотеатр

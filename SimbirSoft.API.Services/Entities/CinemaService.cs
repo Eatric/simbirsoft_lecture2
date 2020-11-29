@@ -7,6 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Simbirsoft.API.Repositories.Interfaces;
+using System.Threading.Tasks;
+using System.Threading;
+using SimbirSoft.API.Services.Interfaces.CRUD;
 
 namespace SimbirSoft.API.Services.Entities
 {
@@ -15,26 +19,45 @@ namespace SimbirSoft.API.Services.Entities
 	/// </summary>
 	public class CinemaService : ICinemaService
 	{
-		private readonly IMapper _mapper;
-		private List<Cinema> _cinemas;
+		private readonly ICinemaRepository _repository;
 
 		/// <summary>
 		/// Инициализация сервиса <see cref="CinemaService"/>
 		/// </summary>
-		/// <param name="mapper">Сервис для привидения DomainModels к DTO</param>
-		public CinemaService(IMapper mapper)
+		/// <param name="repository">Репозиторий для работы с данными</param>
+		public CinemaService(ICinemaRepository repository)
 		{
-			_mapper = mapper;
-			_cinemas = CinemaMock.GetCinemas().ToList();
+			_repository = repository;
 		}
 
-		/// <inheritdoc cref="ICinemaService"/>
-		public IEnumerable<CinemaDTO> GetCinemas()	
+		/// <inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
+		public async Task<CinemaDTO> CreateAsync(CinemaDTO dto)
 		{
-			var response = _mapper.Map<IEnumerable<CinemaDTO>>(_cinemas);
-
-			return response;
+			return await _repository.CreateAsync(dto);
 		}
 
+		/// <inheritdoc cref="IDeletable.DeleteAsync(long[])"/>
+		public async Task DeleteAsync(params long[] ids)
+		{
+			await _repository.DeleteAsync(ids);
+		}
+
+		/// <inheritdoc cref="IGettable{TDto}.GetAsync(CancellationToken)"/>
+		public async Task<IEnumerable<CinemaDTO>> GetAsync(CancellationToken token = default)
+		{
+			return await _repository.GetAsync(token);
+		}
+
+		/// <inheritdoc cref="IGettableById{TDto}.GetAsync(long, CancellationToken)"/>
+		public async Task<CinemaDTO> GetAsync(long id, CancellationToken token = default)
+		{
+			return await _repository.GetAsync(id);
+		}
+
+		/// <inheritdoc cref="IUpdatable{TDto}.UpdateAsync(TDto)"/>
+		public async Task<CinemaDTO> UpdateAsync(CinemaDTO dto)
+		{
+			return await _repository.UpdateAsync(dto);
+		}
 	}
 }

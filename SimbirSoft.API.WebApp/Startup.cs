@@ -10,6 +10,7 @@ using System.Reflection;
 using AutoMapper;
 using SimbirSoft.API.Database.Bootstrap;
 using SimbirSoft.API.Database.Domain;
+using Simbirsoft.API.Repositories.Bootstrap;
 
 namespace SimbirSoft.API.WebApp
 {
@@ -26,6 +27,7 @@ namespace SimbirSoft.API.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.ConfigureDb(Configuration);
+			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
 			services.AddAutoMapper(typeof(Cinema).GetTypeInfo().Assembly);

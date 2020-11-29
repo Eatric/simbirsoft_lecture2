@@ -33,6 +33,10 @@ namespace SimbirSoft.API.Database.Contexts
 		/// </summary>
 		public DbSet<Ticket> Tickets { get; set; }
 
+		/// <summary>
+		/// Инициализация экземпляра <see cref="CinemaContext"/>
+		/// </summary>
+		/// <param name="options">Опции для конфигурации контекста</param>
 		public CinemaContext(DbContextOptions options) : base(options)
 		{
 			Database.EnsureDeleted();

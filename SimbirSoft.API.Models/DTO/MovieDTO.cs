@@ -7,7 +7,7 @@ namespace SimbirSoft.API.Models.DTO
 	/// <summary>
 	/// DTO для <see cref="Movie"/>
 	/// </summary>
-	public class MovieDTO
+	public class MovieDTO : BaseDto
 	{
 		/// <summary>
 		/// Название фильма
