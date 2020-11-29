@@ -26,15 +26,5 @@ namespace SimbirSoft.API.Models.Domain
 		/// Рейтинг фильма
 		/// </summary>
 		public double Rating { get; set; }
-
-		/// <summary>
-		/// Стоимость билета
-		/// </summary>
-		public double Cost { get; set; }
-
-		/// <summary>
-		/// Время показа
-		/// </summary>
-		public DateTime Date { get; set; }
 	}
 }
