@@ -1,31 +1,31 @@
-﻿using SimbirSoft.API.Models.DTO;
+﻿using Simbirsoft.API.Repositories.Interfaces;
+using SimbirSoft.API.Models.DTO;
 using SimbirSoft.API.Services.Interfaces;
-using System.Collections.Generic;
-using Simbirsoft.API.Repositories.Interfaces;
-using System.Threading.Tasks;
-using System.Threading;
 using SimbirSoft.API.Services.Interfaces.CRUD;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SimbirSoft.API.Services.Entities
 {
 	/// <summary>
-	/// Сервис для работы с данными кинотеатров
+	/// Сервис для работы с данными кинофильмов
 	/// </summary>
-	public class CinemaService : ICinemaService
+	public class MovieService : IMovieService
 	{
-		private readonly ICinemaRepository _repository;
+		private readonly IMovieRepository _repository;
 
 		/// <summary>
-		/// Инициализация сервиса <see cref="CinemaService"/>
+		/// Инициализация сервиса <see cref="MovieService"/>
 		/// </summary>
 		/// <param name="repository">Репозиторий для работы с данными</param>
-		public CinemaService(ICinemaRepository repository)
+		public MovieService(IMovieRepository repository)
 		{
 			_repository = repository;
 		}
 
 		/// <inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
-		public async Task<CinemaDTO> CreateAsync(CinemaDTO dto)
+		public async Task<MovieDTO> CreateAsync(MovieDTO dto)
 		{
 			return await _repository.CreateAsync(dto);
 		}
@@ -37,19 +37,19 @@ namespace SimbirSoft.API.Services.Entities
 		}
 
 		/// <inheritdoc cref="IGettable{TDto}.GetAsync(CancellationToken)"/>
-		public async Task<IEnumerable<CinemaDTO>> GetAsync(CancellationToken token = default)
+		public async Task<IEnumerable<MovieDTO>> GetAsync(CancellationToken token = default)
 		{
 			return await _repository.GetAsync(token);
 		}
 
 		/// <inheritdoc cref="IGettableById{TDto}.GetAsync(long, CancellationToken)"/>
-		public async Task<CinemaDTO> GetAsync(long id, CancellationToken token = default)
+		public async Task<MovieDTO> GetAsync(long id, CancellationToken token = default)
 		{
 			return await _repository.GetAsync(id);
 		}
 
 		/// <inheritdoc cref="IUpdatable{TDto}.UpdateAsync(TDto)"/>
-		public async Task<CinemaDTO> UpdateAsync(CinemaDTO dto)
+		public async Task<MovieDTO> UpdateAsync(MovieDTO dto)
 		{
 			return await _repository.UpdateAsync(dto);
 		}

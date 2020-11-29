@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using SimbirSoft.API.Database.Domain;
 using SimbirSoft.API.Models.DTO;
+using SimbirSoft.API.Models.Requests.Movie;
+using SimbirSoft.API.Models.Responses.Movie;
 
 namespace SimbirSoft.API.Models.Mappings
 {
@@ -10,11 +12,14 @@ namespace SimbirSoft.API.Models.Mappings
 	public class MovieProfile : Profile
 	{
 		/// <summary>
-		/// Метод инициализации маппинга между <see cref="Movie"/> и <see cref="MovieDTO"/>
+		/// Метод инициализации маппинга между <see cref="Movie"/>
 		/// </summary>
 		public MovieProfile()
 		{
 			CreateMap<Movie, MovieDTO>();
+			CreateMap<CreateMovieRequest, MovieDTO>();
+			CreateMap<UpdateMovieRequest, MovieDTO>();
+			CreateMap<MovieDTO, MovieResponse>();
 		}
 	}
 }
