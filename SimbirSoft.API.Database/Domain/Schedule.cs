@@ -1,23 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace SimbirSoft.API.Database.Domain
 {
 	/// <summary>
 	/// Расписание фильмов в кинотеатре
 	/// </summary>
-	public class Schedule
+	public class Schedule : BaseEntity
 	{
-		/// <summary>
-		/// Идентификатор расписания
-		/// </summary>
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public long Id { get; set; }
-
 		/// <summary>
 		/// Кинотеатр
 		/// </summary>

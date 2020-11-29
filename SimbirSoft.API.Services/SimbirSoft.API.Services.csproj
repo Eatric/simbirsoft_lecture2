@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SimbirSoft.API.Database\SimbirSoft.API.Database.csproj" />
     <ProjectReference Include="..\SimbirSoft.API.Models\SimbirSoft.API.Models.csproj" />
+    <ProjectReference Include="..\Simbirsoft.API.Repositories\Simbirsoft.API.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SimbirSoft.API.Database.Domain
 {
 	/// <summary>
 	/// Билет в кино
 	/// </summary>
-	public class Ticket
+	public class Ticket : BaseEntity
 	{
-		/// <summary>
-		/// Идентификатор билета
-		/// </summary>
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public long Id { get; set; }
-
 		/// <summary>
 		/// Расписание
 		/// </summary>

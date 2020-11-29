@@ -6,7 +6,7 @@ namespace SimbirSoft.API.Models.DTO
 	/// <summary>
 	/// DTO для <see cref="Ticket"/>
 	/// </summary>
-	public class TicketDTO
+	public class TicketDTO : BaseDto
 	{
 		/// <summary>
 		/// Расписание
