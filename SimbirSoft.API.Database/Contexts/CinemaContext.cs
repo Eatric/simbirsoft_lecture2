@@ -39,7 +39,7 @@ namespace SimbirSoft.API.Database.Contexts
 		/// <param name="options">Опции для конфигурации контекста</param>
 		public CinemaContext(DbContextOptions options) : base(options)
 		{
-			Database.EnsureDeleted();
+			//Database.EnsureDeleted();
 			Database.EnsureCreated();
 		}
 	}
