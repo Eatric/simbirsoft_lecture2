@@ -1,4 +1,4 @@
-﻿using SimbirSoft.API.Models.Domain;
+﻿using SimbirSoft.API.Database.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,11 +22,9 @@ namespace SimbirSoft.API.Database.Mocks
 				yield return new Movie()
 				{
 					Id = random.Next(0, 1000),
-					Cost = random.NextDouble() * 100,
 					Name = random.NextDouble() * 10 + " " + random.Next(0, 1000),
 					Description = random.NextDouble() * 10 + " " + random.Next(0, 1000),
-					Rating = random.NextDouble() * 10,
-					Date = DateTime.Today
+					Rating = random.NextDouble() * 10
 				};
 			}
 		}

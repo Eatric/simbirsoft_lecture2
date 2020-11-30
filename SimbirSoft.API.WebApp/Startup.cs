@@ -6,9 +6,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SimbirSoft.API.Services.Bootstrap;
 using SimbirSoft.API.WebApp.Common.Swagger;
-using SimbirSoft.API.Models.Domain;
 using System.Reflection;
 using AutoMapper;
+using SimbirSoft.API.Database.Bootstrap;
+using SimbirSoft.API.Database.Domain;
+using Simbirsoft.API.Repositories.Bootstrap;
+using SimbirSoft.API.Models.Requests.Cinema;
+using SimbirSoft.API.Services.Entities;
 
 namespace SimbirSoft.API.WebApp
 {
@@ -24,9 +28,14 @@ namespace SimbirSoft.API.WebApp
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.ConfigureDb(Configuration);
+			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
-			services.AddAutoMapper(typeof(Cinema).GetTypeInfo().Assembly);
+			services.AddAutoMapper(
+				typeof(CreateCinemaRequest).GetTypeInfo().Assembly,
+				typeof(CinemaService).GetTypeInfo().Assembly
+			);
 			services.ConfigureSwagger();
 		}
 

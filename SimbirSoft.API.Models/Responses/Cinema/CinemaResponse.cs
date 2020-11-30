@@ -1,12 +1,13 @@
-﻿using SimbirSoft.API.Database.Domain;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace SimbirSoft.API.Models.DTO
+namespace SimbirSoft.API.Models.Responses.Cinema
 {
 	/// <summary>
-	/// DTO для <see cref="Cinema"/>
+	/// Ответ на запросы для сервисов кинотеатров
 	/// </summary>
-	public class CinemaDTO : BaseDto
+	public class CinemaResponse
 	{
 		/// <summary>
 		/// Имя кинотеатра

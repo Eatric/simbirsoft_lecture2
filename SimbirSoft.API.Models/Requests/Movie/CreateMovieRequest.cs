@@ -1,13 +1,14 @@
-﻿using SimbirSoft.API.Database.Domain;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace SimbirSoft.API.Models.DTO
+namespace SimbirSoft.API.Models.Requests.Movie
 {
 	/// <summary>
-	/// DTO для <see cref="Movie"/>
+	/// Запрос на создание сущности кинофильма
 	/// </summary>
-	public class MovieDTO : BaseDto
+	public class CreateMovieRequest
 	{
 		/// <summary>
 		/// Название фильма

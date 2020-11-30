@@ -1,13 +1,11 @@
-﻿using SimbirSoft.API.Database.Domain;
-using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace SimbirSoft.API.Models.DTO
+namespace SimbirSoft.API.Database.Domain
 {
 	/// <summary>
-	/// DTO для <see cref="Movie"/>
+	/// Фильм
 	/// </summary>
-	public class MovieDTO : BaseDto
+	public class Movie : BaseEntity
 	{
 		/// <summary>
 		/// Название фильма
