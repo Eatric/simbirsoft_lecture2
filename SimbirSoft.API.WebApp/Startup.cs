@@ -12,6 +12,7 @@ using SimbirSoft.API.Database.Bootstrap;
 using SimbirSoft.API.Database.Domain;
 using Simbirsoft.API.Repositories.Bootstrap;
 using SimbirSoft.API.Models.Requests.Cinema;
+using SimbirSoft.API.Services.Entities;
 
 namespace SimbirSoft.API.WebApp
 {
@@ -31,7 +32,10 @@ namespace SimbirSoft.API.WebApp
 			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
-			services.AddAutoMapper(typeof(CreateCinemaRequest).GetTypeInfo().Assembly);
+			services.AddAutoMapper(
+				typeof(CreateCinemaRequest).GetTypeInfo().Assembly,
+				typeof(CinemaService).GetTypeInfo().Assembly
+			);
 			services.ConfigureSwagger();
 		}
 
