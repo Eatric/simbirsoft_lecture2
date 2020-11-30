@@ -16,7 +16,7 @@ namespace SimbirSoft.API.Models.Mappings
 		/// </summary>
 		public MovieProfile()
 		{
-			CreateMap<Movie, MovieDTO>();
+			CreateMap<Movie, MovieDTO>().ReverseMap();
 			CreateMap<CreateMovieRequest, MovieDTO>();
 			CreateMap<UpdateMovieRequest, MovieDTO>();
 			CreateMap<MovieDTO, MovieResponse>();
