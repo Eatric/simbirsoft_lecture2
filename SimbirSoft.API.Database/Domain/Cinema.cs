@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SimbirSoft.API.Database.Domain
 {
@@ -26,5 +27,10 @@ namespace SimbirSoft.API.Database.Domain
 		/// </summary>
 		[Required]
 		public byte NumberOfHalls { get; set; }
+
+		/// <summary>
+		/// Список фильмов которые идут в кинотеатре
+		/// </summary>
+		public ICollection<Schedule> Schedules { get; set; }
 	}
 }
