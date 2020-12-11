@@ -1,4 +1,7 @@
-﻿using Simbirsoft.API.Repositories.Interfaces;
+﻿using Simbirsoft.API.Repositories;
+using Simbirsoft.API.Repositories.Interfaces;
+using Simbirsoft.API.Repositories.Interfaces.UOW;
+
 using SimbirSoft.API.Models.DTO;
 using SimbirSoft.API.Services.Interfaces;
 using SimbirSoft.API.Services.Interfaces.CRUD;
@@ -13,15 +16,17 @@ namespace SimbirSoft.API.Services.Entities
 	/// </summary>
 	public class MovieService : IMovieService
 	{
+		private readonly IUnitOfWork _unitOfWork;
 		private readonly IMovieRepository _repository;
 
 		/// <summary>
 		/// Инициализация сервиса <see cref="MovieService"/>
 		/// </summary>
-		/// <param name="repository">Репозиторий для работы с данными</param>
-		public MovieService(IMovieRepository repository)
+		/// <param name="unitOfWork">Класс для получения репозитория</param>
+		public MovieService(IUnitOfWork unitOfWork)
 		{
-			_repository = repository;
+			_unitOfWork = unitOfWork;
+			_repository = unitOfWork.GetRepository<MovieRepository>();
 		}
 
 		/// <inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>

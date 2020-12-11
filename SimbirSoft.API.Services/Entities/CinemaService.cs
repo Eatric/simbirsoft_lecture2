@@ -5,6 +5,8 @@ using Simbirsoft.API.Repositories.Interfaces;
 using System.Threading.Tasks;
 using System.Threading;
 using SimbirSoft.API.Services.Interfaces.CRUD;
+using Simbirsoft.API.Repositories.Interfaces.UOW;
+using Simbirsoft.API.Repositories;
 
 namespace SimbirSoft.API.Services.Entities
 {
@@ -13,15 +15,17 @@ namespace SimbirSoft.API.Services.Entities
 	/// </summary>
 	public class CinemaService : ICinemaService
 	{
+		private readonly IUnitOfWork _unitOfWork;
 		private readonly ICinemaRepository _repository;
 
 		/// <summary>
 		/// Инициализация сервиса <see cref="CinemaService"/>
 		/// </summary>
-		/// <param name="repository">Репозиторий для работы с данными</param>
-		public CinemaService(ICinemaRepository repository)
+		/// <param name="unitOfWork">Класс для получения репозитория</param>
+		public CinemaService(IUnitOfWork unitOfWork)
 		{
-			_repository = repository;
+			_unitOfWork = unitOfWork;
+			_repository = unitOfWork.GetRepository<CinemaRepository>();
 		}
 
 		/// <inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
