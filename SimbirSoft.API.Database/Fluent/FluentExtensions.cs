@@ -7,9 +7,20 @@ using System.Linq.Expressions;
 
 namespace SimbirSoft.API.Database.Fluent
 {
-
+    /// <summary>
+    /// Расширение для работы миграции со связанными сущностями
+    /// </summary>
     public static class FluentExtentions
     {   
+        /// <summary>
+        /// Метод для построения отношения 1 ко многим в таблице
+        /// </summary>
+        /// <typeparam name="T">Основной класс</typeparam>
+        /// <typeparam name="T1">Отношение 1 в таблице</typeparam>
+        /// <typeparam name="T2">Отношение 2 в таблице</typeparam>
+        /// <param name="builder">Билдер</param>
+        /// <param name="withMany1">Параметры отношения 1</param>
+        /// <param name="withMany2">Параметры отношения 2</param>
         public static void BaseEntityWithLinksConfig<T, T1, T2>(this EntityTypeBuilder<T> builder,
                                                            Expression<Func<T1, IEnumerable<T>>> withMany1 = default,
                                                            Expression<Func<T2, IEnumerable<T>>> withMany2 = default)

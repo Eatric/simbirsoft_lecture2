@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Simbirsoft.API.Repositories.Interfaces;
+using Simbirsoft.API.Repositories.Interfaces.UOW;
+using Simbirsoft.API.Repositories.UOW;
 
 namespace Simbirsoft.API.Repositories.Bootstrap
 {
@@ -14,8 +15,7 @@ namespace Simbirsoft.API.Repositories.Bootstrap
 		/// <param name="services">Список сервисов</param>
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
-			services.AddScoped<ICinemaRepository, CinemaRepository>();
-			services.AddScoped<IMovieRepository, MovieRepository>();
+			services.AddScoped<IUnitOfWork, UnitOfWork>();
 		}
 	}
 }
