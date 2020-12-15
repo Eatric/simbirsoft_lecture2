@@ -28,6 +28,7 @@ namespace SimbirSoft.API.WebApp
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddCors();
 			services.ConfigureDb(Configuration);
 			services.ConfigureRepositories();
 			services.AddControllers();
@@ -51,6 +52,7 @@ namespace SimbirSoft.API.WebApp
 
 			app.UseRouting();
 
+			app.UseCors(x => x.WithOrigins("http://localhost:5000", "https://localhost:5001"));
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
@@ -58,7 +60,6 @@ namespace SimbirSoft.API.WebApp
 				endpoints.MapControllers();
 			});
 
-			app.UseCors();
 			app.UseOpenApi();
 			app.UseSwaggerUi3();
 
