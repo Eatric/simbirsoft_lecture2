@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SimbirSoft.API.Database.Domain
 {
@@ -22,9 +23,21 @@ namespace SimbirSoft.API.Database.Domain
 		public string Description { get; set; }
 
 		/// <summary>
+		/// Режиссёр фильма
+		/// </summary>
+		[Required]
+		[StringLength(150)]
+		public string Producer { get; set; }
+
+		/// <summary>
 		/// Рейтинг фильма
 		/// </summary>
 		[Required]
 		public double Rating { get; set; }
+
+		/// <summary>
+		/// Показывается ли этот фильм в каком либо кинотеатре
+		/// </summary>
+		public ICollection<Schedule> Schedules { get; set; }
 	}
 }

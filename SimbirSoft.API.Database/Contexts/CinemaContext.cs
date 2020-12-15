@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using SimbirSoft.API.Database.Domain;
+using SimbirSoft.API.Database.Fluent;
 
 using System;
 using System.Collections.Generic;
@@ -38,9 +39,15 @@ namespace SimbirSoft.API.Database.Contexts
 		/// </summary>
 		/// <param name="options">Опции для конфигурации контекста</param>
 		public CinemaContext(DbContextOptions options) : base(options)
+		{ }
+
+		/// <summary>
+		/// Правила создания сущностей
+		/// </summary>
+		/// <param name="builder">Билдер моделей</param>
+		protected override void OnModelCreating(ModelBuilder builder)
 		{
-			//Database.EnsureDeleted();
-			Database.EnsureCreated();
+			builder.ApplyConfiguration(new ScheduleConfig());
 		}
 	}
 }
