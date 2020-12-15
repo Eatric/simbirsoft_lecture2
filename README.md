@@ -22,3 +22,8 @@
 ## ERD
 
 ![ERD](ERD.png)
+
+## Fixed Vulnerabilities
+
+1. CORS политика, были ограничены запросы только доменом "localhost"
+2. DUHK уязвимость, ConnectionString был добавлен в "dotnet user-secrets" под Id "916b2489-920e-442c-9d73-aeab4cd25dbc"
