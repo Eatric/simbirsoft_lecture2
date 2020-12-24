@@ -2,6 +2,7 @@
 using Simbirsoft.API.Repositories.Interfaces.UOW;
 using SimbirSoft.API.Database.Contexts;
 using System;
+using System.Collections.Generic;
 
 namespace Simbirsoft.API.Repositories.UOW
 {
@@ -10,6 +11,7 @@ namespace Simbirsoft.API.Repositories.UOW
     {
         private readonly CinemaContext _databaseContext;
         private readonly IMapper _mapper;
+        private readonly Dictionary<Type, object> _repositories;
 
         /// <summary>
         /// Конструктор для создания UOW
@@ -20,12 +22,22 @@ namespace Simbirsoft.API.Repositories.UOW
         {
             _databaseContext = dbContext;
             _mapper = mapper;
+            _repositories = new Dictionary<Type, object>();
         }
 
         /// <inheritdoc cref="IUnitOfWork.GetRepository{T}"/>
         public T GetRepository<T>() where T : class
         {
-            var result = (T)Activator.CreateInstance(typeof(T), _databaseContext, _mapper);
+            var rep = typeof(T);
+
+            if(_repositories.ContainsKey(rep))
+			{
+                return (T)_repositories[rep];
+			}
+
+            var result = (T)Activator.CreateInstance(rep, _databaseContext, _mapper);
+            _repositories.Add(rep, result);
+
             if (result != null)
             {
                 return result;

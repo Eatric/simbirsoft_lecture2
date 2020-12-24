@@ -17,7 +17,7 @@ namespace Simbirsoft.API.Repositories
 		where TModel : BaseEntity
         where TDto : BaseDto
 	{
-		private readonly IMapper _mapper;
+		protected readonly IMapper _mapper;
 		protected readonly CinemaContext _context;
 		protected DbSet<TModel> DbSet => _context.Set<TModel>();
 

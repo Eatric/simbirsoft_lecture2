@@ -9,10 +9,10 @@ using SimbirSoft.API.WebApp.Common.Swagger;
 using System.Reflection;
 using AutoMapper;
 using SimbirSoft.API.Database.Bootstrap;
-using SimbirSoft.API.Database.Domain;
 using Simbirsoft.API.Repositories.Bootstrap;
 using SimbirSoft.API.Models.Requests.Cinema;
 using SimbirSoft.API.Services.Entities;
+using Simbirsoft.API.Infrastructure.Bootstrap;
 
 namespace SimbirSoft.API.WebApp
 {
@@ -29,6 +29,7 @@ namespace SimbirSoft.API.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddCors();
+			services.ConfigureAuthentication(Configuration);
 			services.ConfigureDb(Configuration);
 			services.ConfigureRepositories();
 			services.AddControllers();
@@ -50,6 +51,14 @@ namespace SimbirSoft.API.WebApp
 
 			app.UseHttpsRedirection();
 
+			app.UseSwagger();
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("./swagger/v1/swagger.json", "JWT Auth Demo V1");
+				c.DocumentTitle = "JWT Auth Demo";
+				c.RoutePrefix = string.Empty;
+			});
+
 			app.UseRouting();
 
 			app.UseCors(x => x.WithOrigins("http://localhost:5000", "https://localhost:5001"));
@@ -60,8 +69,6 @@ namespace SimbirSoft.API.WebApp
 				endpoints.MapControllers();
 			});
 
-			app.UseOpenApi();
-			app.UseSwaggerUi3();
 
 			logger.LogInformation("End configure");
 		}

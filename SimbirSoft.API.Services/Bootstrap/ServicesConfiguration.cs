@@ -19,6 +19,8 @@ namespace SimbirSoft.API.Services.Bootstrap
 		public static void ConfigureServices(this IServiceCollection services)
 		{
 			services.AddScoped<ICinemaService, CinemaService>();
+			services.AddScoped<IMovieService, MovieService>();
+			services.AddScoped<IUserService, UserService>();
 		}
 	}
 }
