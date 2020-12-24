@@ -7,7 +7,7 @@ namespace SimbirSoft.API.Database.Domain
 	/// <summary>
 	/// Расписание фильмов в кинотеатре
 	/// </summary>
-	public class Schedule : BaseEntityWithLinks<Cinema, Movie>
+	public class Schedule : BaseEntityWithTwoLinks<Cinema, Movie>
 	{
 		/// <summary>
 		/// Идентификатор записи

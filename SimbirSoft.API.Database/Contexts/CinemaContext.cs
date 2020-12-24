@@ -35,6 +35,21 @@ namespace SimbirSoft.API.Database.Contexts
 		public DbSet<Ticket> Tickets { get; set; }
 
 		/// <summary>
+		/// Пользователи
+		/// </summary>
+		public DbSet<User> Users { get; set; }
+
+		/// <summary>
+		/// Роли
+		/// </summary>
+		public DbSet<Role> Roles { get; set; }
+
+		/// <summary>
+		/// Роли пользователей
+		/// </summary>
+		public DbSet<UserRoles> UserRoles { get; set; }
+
+		/// <summary>
 		/// Инициализация экземпляра <see cref="CinemaContext"/>
 		/// </summary>
 		/// <param name="options">Опции для конфигурации контекста</param>

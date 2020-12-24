@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+
 using AutoMapper;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using SimbirSoft.API.Models.DTO;
 using SimbirSoft.API.Models.Requests.Movie;
 using SimbirSoft.API.Models.Responses.Movie;
 using SimbirSoft.API.Services.Interfaces;
-using SimbirSoft.API.WebApp.Common.Swagger;
 
 namespace SimbirSoft.API.WebApp.Controllers
 {
@@ -18,7 +21,7 @@ namespace SimbirSoft.API.WebApp.Controllers
 	/// </summary>
 	[ApiController]
 	[Route("[controller]")]
-	[ApiExplorerSettings(GroupName = SwaggerGroups.Cinema)]
+	[Authorize]
 	public class MovieController : ControllerBase
 	{
 		private readonly ILogger<MovieController> _logger;

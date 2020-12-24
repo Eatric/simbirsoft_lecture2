@@ -2,6 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,7 +20,7 @@ namespace SimbirSoft.API.WebApp.Controllers
 	/// </summary>
 	[ApiController]
 	[Route("[controller]")]
-	[ApiExplorerSettings(GroupName = SwaggerGroups.Cinema)]
+	[Authorize]
 	public class CinemaController : ControllerBase
 	{
 		private readonly ILogger<CinemaController> _logger;

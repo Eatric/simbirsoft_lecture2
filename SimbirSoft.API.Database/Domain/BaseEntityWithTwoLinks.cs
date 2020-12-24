@@ -9,7 +9,7 @@ namespace SimbirSoft.API.Database.Domain
 	/// </summary>
 	/// <typeparam name="TEntity1">Сущность 1</typeparam>
 	/// <typeparam name="TEntity2">Сущность 2</typeparam>
-	public abstract class BaseEntityWithLinks <TEntity1, TEntity2>
+	public abstract class BaseEntityWithTwoLinks <TEntity1, TEntity2>
 		where TEntity1 : BaseEntity
 		where TEntity2 : BaseEntity
 	{

@@ -24,7 +24,7 @@ namespace SimbirSoft.API.Database.Fluent
         public static void BaseEntityWithLinksConfig<T, T1, T2>(this EntityTypeBuilder<T> builder,
                                                            Expression<Func<T1, IEnumerable<T>>> withMany1 = default,
                                                            Expression<Func<T2, IEnumerable<T>>> withMany2 = default)
-                      where T : BaseEntityWithLinks<T1, T2>
+                      where T : BaseEntityWithTwoLinks<T1, T2>
                       where T1 : BaseEntity
                       where T2 : BaseEntity
         {
